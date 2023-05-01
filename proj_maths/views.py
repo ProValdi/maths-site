@@ -40,6 +40,9 @@ def send_term(request):
         add_term(request)
 
 
+def show_mine(request):
+    return render(request, "mine.html")
+
 def show_stats(request):
     stats = terms_work.get_terms_stats()
     return render(request, "stats.html", stats)
