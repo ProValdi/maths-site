@@ -21,7 +21,7 @@ urlpatterns = [
     path('', views.index),
     path('terms-list', views.terms_list),
     path('add-term', views.add_term),
-    path('send-term', views.send_term),
+    path('send-card', views.send_card),
     path('stats', views.show_stats),
-    path('mine', views.show_mine),
+    path('cards-list', views.cards_list),
 ]

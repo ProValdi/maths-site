@@ -2,12 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
     <title>{% block pagetitle %}{% endblock %}</title>
     <!-- load static -->
     {% load static %}
     <!-- CSS -->
     <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'cards_list.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+
 </head>
 <body>
 <main>
@@ -16,7 +20,7 @@
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <div class="fs-2 mb-3">
                     <img src="{% static 'calculator.svg' %}" alt="Проект про математику" width="32" height="32"/>
-                    <span>Проект про математику</span>
+                    <span>Проект про иностранные языки</span>
                 </div>
             </a>
         </header>
@@ -27,8 +31,15 @@
             </div>
         </div>
         {% block content %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <script>
+            var data = '{% static "cards.csv" %}'
+        </script>
+        <script src="{% static 'logic.js' %}">
+        </script>
         <footer class="footer pt-3 mt-4 text-muted border-top">© 2023</footer>
     </div>
+
 </main>
 </body>
 </html>

@@ -1,0 +1,64 @@
+.anki:hover {
+    cursor: pointer;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+rect {
+    transition: fill 2s;
+    fill: rgb(0, 0, 255);
+}
+
+rect:hover {
+    fill: rgb(0, 0, 123);
+}
+
+rect:active {
+    fill: rgb(0, 0, 11);
+}
+
+.bd-placeholder-img .card-img-top .color-changer {
+    background-color: red;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+.color-changer {
+    background-color: black;
+    cursor: pointer;
+}
+
+
+.progressbar {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    margin: 30px auto 0;
+    height: 10px;
+    background: #274545;
+    overflow: hidden;
+    display: none;
+}
+
+.counter {
+    display: none;
+}
