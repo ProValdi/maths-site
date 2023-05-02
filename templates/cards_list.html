@@ -1,11 +1,11 @@
 {% extends "base_page.html" %}
 
 {% block page-title %}
-    Здесь начинается мой код
+    Карточная игра для изучения слов
 {% endblock %}
 
 {% block page-lead %}
-    Какое-то описание
+    Кликайте на карточки, чтобы проверить свой перевод. Слово можно пометить как "изученное"
 {% endblock %}
 
 {% block content %}
@@ -14,21 +14,21 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for cnt, source, target in cards %}
+                {% for cnt, source, target, learned in cards %}
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="anki">
                                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                                      preserveAspectRatio="xMidYMid slice" focusable="false"><title>Name of card</title>
                                     <rect id="rect{{ cnt }}" class="color-changer" width="100%" height="100%"></rect>
-                                    <text style="font-size: 2.1em; font-weight: normal;" id="txt{{ cnt }}-1" x="50%" y="50%" fill="#eceeef" dy=".3em">{{ source }}</text>
+                                    <text style="font-size: 2.1em; font-weight: normal;" id="txt{{ cnt }}-1" x="50%" y="50%" fill="#eceeef" dy=".3em" id="new_target">{{ source }}</text>
                                     <text id="txt{{ cnt }}-2" x="50%" y="50%" fill="#eceeef" dy=".3em" style="display: none; font-size: 2.1em; font-weight: normal;">{{ target }}</text>
                                 </svg>
                             </div>
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" formaction="/catch-card">Запомнил!</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="call_counter({{ cnt }});">Запомнил!</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Забыл</button>
                                     </div>
                                 </div>

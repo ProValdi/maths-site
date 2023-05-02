@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $.ajax({
         type: "GET",
@@ -31,5 +30,19 @@ function addLogicOfListener(index) {
         document.getElementById("txt" + index + "-1").style = "font-size: 2.1em; font-weight: normal;";
         document.getElementById("txt" + index + "-2").style = "display:none; font-size: 2.1em; font-weight: normal;";
     }, 4000);
+}
+
+function call_counter(value) {
+    $.ajax({
+        type: 'POST',
+        data: {"value": value},
+        url: '/catch-card',
+        success: function (res) {
+            console.log(res)
+        },
+        error: function (error) {
+            callbackErr(error, self)
+        }
+    })
 }
 

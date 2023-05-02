@@ -10,6 +10,7 @@ def index(request):
 
 def terms_list(request):
     cards = cards_work.get_cards_for_table()
+    print(cards)
     return render(request, "term_list.html", context={"cards": cards})
 
 
@@ -20,6 +21,14 @@ def cards_list(request):
 
 def add_term(request):
     return render(request, "term_add.html")
+
+
+def catch_card(request):
+    if request.method == "POST":
+        cache.clear()
+        result_idx = request.body.decode('UTF-8').split("=")[1]
+        cards_work.modify_card(result_idx, 1)
+
 
 
 def send_card(request):

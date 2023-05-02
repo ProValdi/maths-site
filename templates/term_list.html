@@ -1,34 +1,36 @@
 {% extends "base_page.html" %}
 
 {% block page-title %}
-Список слов
+    Список слов
 {% endblock %}
 
 {% block page-lead %}
-Все термины извлекаются из БД/файла и динамически вставляются в таблицу.
+    Все термины извлекаются из БД/файла и динамически вставляются в таблицу.
 {% endblock %}
 
 {% block content %}
-<div class="container px-4 py-5" id="terms-table">
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col" class="py-3">#</th>
-              <th scope="col" class="py-3">Слово</th>
-              <th scope="col" class="py-3">Английский перевод</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for cnt, source, target in cards %}
-            <tr>
-                <td class="py-3">{{ cnt }}</td>
-                <td class="py-3">{{ source }}</td>
-                <td class="py-3">{{ target }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-</div>
+    <div class="container px-4 py-5" id="terms-table">
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th scope="col" class="py-3">#</th>
+                    <th scope="col" class="py-3">Слово</th>
+                    <th scope="col" class="py-3">Английский перевод</th>
+                    <th scope="col" class="py-3">Изучено</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for cnt, source, target, learned in cards %}
+                    <tr>
+                        <td class="py-3">{{ cnt }}</td>
+                        <td class="py-3">{{ source }}</td>
+                        <td class="py-3">{{ target }}</td>
+                        <td class="py-3">{% if not learned %}Изучено!{% else %} {% endif %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

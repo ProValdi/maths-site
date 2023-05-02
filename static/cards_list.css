@@ -22,7 +22,7 @@
 }
 
 rect {
-    transition: fill 2s;
+    transition: fill 1s;
     fill: rgb(0, 0, 255);
 }
 

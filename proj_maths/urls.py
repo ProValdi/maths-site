@@ -22,6 +22,7 @@ urlpatterns = [
     path('terms-list', views.terms_list),
     path('add-term', views.add_term),
     path('send-card', views.send_card),
+    path('catch-card', views.catch_card),
     path('stats', views.show_stats),
     path('cards-list', views.cards_list),
 ]
